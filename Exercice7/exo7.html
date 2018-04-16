@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr" ng-app="testApp">
+    <head>
+        <meta charset="UTF-8" />
+        <title>AngularJS Partie 3 Exercice 7</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+        <script src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+    </head>
+    <style>
+    body {
+      font-family: 'Gugi', cursive;
+    }
+    </style>
+<body>
+  <h1>AngularJS Partie 3 Exercice</h1>
+<div ng-controller="phonesCtrl">
+  <table cellspacing="2px" cellpadding="2px;" rules="all" style="border:solid 1px black;">
+    <thead>
+      <th>Modèle</th>
+      <th>Marque</th>
+    </thead>
+    <tr ng-repeat="phone in phones | orderBy: 'phoneModel'"><!--J'ajoute directement dans la balise avec | orderBy: ce que je veux en triAlphabetique entre ''-->
+      <td>
+        {{phone.phoneModel}}
+      </td>
+      <td>
+        {{phone.brand}}
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
